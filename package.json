@@ -19,6 +19,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-scripts": "^5.0.1",
+    "reactstrap": "^9.1.9",
+    "typescript": "^5.0.4",
     "webpack": "^5.82.0",
     "webpack-cli": "^5.0.2"
   },

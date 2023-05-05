@@ -64,7 +64,6 @@ export default class Cast extends Component{
                             <li>Philip Kaufman</li>
                         </ul>
                     </div>
-                    <button id="submitBtn" class="btn btn-warning form-control">Submit</button>
 
                 </form>
             </section>

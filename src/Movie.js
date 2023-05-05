@@ -21,6 +21,7 @@ export default class Movie extends Component{
                         </p>
                     </div>
                     <StarRating></StarRating>
+                    <p className='yourRating'>Your Rating</p>
                     
                 </div>
             </section>
