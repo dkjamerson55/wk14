@@ -4,6 +4,7 @@ import Nav from './Nav'
 import Review from './Movie'
 import Cast from './Cast'
 
+
 //functional based component that calls/returns components from imported modules
 function App() {
     return <div className="App">

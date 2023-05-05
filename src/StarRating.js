@@ -1,44 +1,41 @@
-import React from 'react'
-import PropTypes from "propTypes";
+import React, {useState} from 'react'
+import {FaStar} from "react-icons/fa"
 
-const Rate = ({count, rating, color, onRating}) => {
-   
-   const starRating = useMemo(() => {
-        return Array(count)
-            .fill(0)
-            .map((_, i) => i + 1)
-            .map( idx => {
-                <FontAwesomeIcon
-                    key={idx}
-                    className="cursor-pointer"
-                    icon="star"
-                    onClick={() => onRating(idx)}
-                />
-            })
-   }, [count, rating])
+const StarRating =() => {
+    const[rating, setRating]= useState(null);
+    const[hover, setHover]= useState(null);
+
     return (
-        <div>
-            {starRating}
+        <div className="starRating">
+            {/* method to map over an array of 5 undefined items and use index to help iterate the position*/}
+            {[...Array(5)].map((star,i) => {
+                const ratingValue = i +1
+
+                return (
+                    <label>
+
+                        <input
+                         type='radio' 
+                         name='rating' 
+                         value={ratingValue} 
+                         onClick={() => setRating(ratingValue)}
+                        ></input>
+
+                        <FaStar 
+                        className="star" 
+                        color={ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"} 
+                        size={35}
+                        onMouseEnter={() => setHover(ratingValue)}
+                        onMouseLeave={() => setHover(null)}
+                         />
+
+                    </label>
+                )
+            })} 
+            <p>Movie Rating {rating}</p>
         </div>
+
     )
 }
 
-Rate.propTypes = {
-    count: PropTypes.number,
-    rating: PropTypes.number,
-    onChange: PropTypes.func,
-    color: {
-        filled: PropTypes.string, 
-        unfilled: PropTypes.string
-    }
-}
-
-Rate.defaultProps = {
-    count: 5, 
-    rating: 0, 
-    color: {
-        filled: "#f5eb3b",
-        unfilled: "#DCDCDC"
-    }
-}
-export default Rate;
+export default StarRating

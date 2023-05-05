@@ -1,5 +1,6 @@
 // class based component for Review
 import React, {Component} from 'react'
+import StarRating from './StarRating'
 
 //shell for class based component for ReviewForm
 export default class Movie extends Component{
@@ -19,7 +20,7 @@ export default class Movie extends Component{
                         In 1936, archaeologist and adventurer Indiana Jones is hired by the U.S. government to find the Ark of the Covenant before the Nazis can obtain its awesome powers.
                         </p>
                     </div>
-                    <button id="submitBtn" class="btn btn-warning form-control">Submit</button>
+                    <StarRating></StarRating>
                     
                 </div>
             </section>
