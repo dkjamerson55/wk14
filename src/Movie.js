@@ -2,7 +2,7 @@
 import React, {Component} from 'react'
 import StarRating from './StarRating'
 
-//shell for class based component for ReviewForm
+//shell for class based component for Movie
 export default class Movie extends Component{
     render(){
         return(

@@ -52,12 +52,41 @@ export default class Reviews extends Component{
                             </CardText>
                         </div>
 
+                        
+
+                    </div>
+
+                    <div className='reviews-top'>
+
+                        <div className='user-details'>
+                            <StarRating></StarRating>
+                            <h5>Helpful Rating</h5>
+                            <CardImg
+                                className='avatar'
+                                src="https://cdn.vectorstock.com/i/preview-1x/32/12/default-avatar-profile-icon-vector-39013212.jpg"
+                                style={{width: 50, height: 60}}
+                                alt='user avatar'
+                            />
+                            
+                            <CardSubtitle className='mb-2 text-muted' tag="h6">{firstName} {lastName || "John_Doe"}
+                            </CardSubtitle>
+
+                        </div>
+
+                        <div className='review-body'>
+                            <CardText>
+                                <small className='text-review'>
+                                    This movie is awfull, its terribly dated and has some of the worst action scenes I've ever seen.
+                                </small>
+
+                            </CardText>
+                        </div>
+
+                        
+
                     </div>
                 </CardBody>
             </Card>
-
-            
-            
         )    
     }
 }
