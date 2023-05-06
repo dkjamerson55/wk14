@@ -1,20 +1,46 @@
-// class based component for Review
-import React, {useState} from 'react'
 
+import { useState } from "react";
+// import { CardText } from 'reactstrap';
+import StarRating from './StarRating';
+//state is used when needing to update forms
+function ReviewForm (){
+    //[] declare state variables, first item is current value the second is its ability to update
+    const[review, setReview] = useState([]);
+    const[inputReview, setInputReview] = useState('');
 
-//shell for class based component for ReviewForm
-export default class Form extends Component{
-    render(){
-        const [review, setReview] = useState([])
-        const handleSubmit= (e) =>{
-            e.preventDefault();
-        }
-        return(
-            <form className='reviewForm'>
-                <label>Leave a Review!</label>
-                <input type='text' placeholder='Enter your review'></input>
-                <button onSubmit={(e) => handleSubmit(e)}>Submit</button>
+    //changes useState for each const declared and then adds to an array
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setReview([...review, inputReview]);
+        setInputReview('');
+    };
+
+    //changes useState to the string value input
+    const handleChange = (e) => {
+        setInputReview([e.target.value]);
+    };
+
+    return (
+        <div className='reviewForm'>
+            <form onSubmit={handleSubmit}>
+
+                <input
+                    className='form-control'
+                    value={inputReview}
+                    placeholder='Leave a Review!'
+                    onChange={handleChange}>
+                </input>
+
+                {/* <StarRating></StarRating> */}
+                    <button className='btn m-2' type='submit'>submit</button>
             </form>
-        )
-    }
+            <div className='row'>
+                {review.map((reviews, i)=> (
+                    <div key={i}>{reviews}</div>
+                ))}
+            </div>
+        </div>
+    )
 }
+
+export default ReviewForm;

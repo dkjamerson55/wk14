@@ -18,6 +18,7 @@ const StarRating =() => {
                          type='radio' 
                          name='rating' 
                          value={ratingValue} 
+                         //function that takes sets rating to appropriate value when clicked
                          onClick={() => setRating(ratingValue)}
                         ></input>
 

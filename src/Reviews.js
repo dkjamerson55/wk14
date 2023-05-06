@@ -1,6 +1,7 @@
 // class based component for Review
 import React, {Component} from 'react'
 import StarRating from './StarRating';
+// import ReviewForm from './ReviewForm';
 import {
     Card,
     CardSubtitle,
@@ -85,6 +86,7 @@ export default class Reviews extends Component{
                         
 
                     </div>
+
                 </CardBody>
             </Card>
         )    
